@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Sistem Monitoring Stok Obat</title>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <header>
+        <h1>Sistem Monitoring Stok Obat</h1>
+        <p>Apotek Sehat - Universitas Sebelas Maret</p>
+    </header>
+
+    <!-- TABEL STOK OBAT -->
+    <h2>Daftar Stok Obat</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Nama Obat</th>
+                <th>Kategori</th>
+                <th>Jumlah Stok</th>
+                <th>Satuan</th>
+                <th>Status</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody id="isiTabel">
+            <tr>
+                <td>1</td>
+                <td>Paracetamol 500mg</td>
+                <td>Analgesik</td>
+                <td>150</td>
+                <td>Tablet</td>
+                <td>Aman</td>
+                <td><button class="btn-hapus" onclick="hapusObat(this)">🗑 Hapus</button></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Amoxicillin 500mg</td>
+                <td>Antibiotik</td>
+                <td>20</td>
+                <td>Kapsul</td>
+                <td>Menipis</td>
+                <td><button class="btn-hapus" onclick="hapusObat(this)">🗑 Hapus</button></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Antasida Doen</td>
+                <td>Antasida</td>
+                <td>0</td>
+                <td>Tablet</td>
+                <td>Habis</td>
+                <td><button class="btn-hapus" onclick="hapusObat(this)">🗑 Hapus</button></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Vitamin C 500mg</td>
+                <td>Vitamin & Suplemen</td>
+                <td>80</td>
+                <td>Tablet</td>
+                <td>Aman</td>
+                <td><button class="btn-hapus" onclick="hapusObat(this)">🗑 Hapus</button></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Amlodipine 5mg</td>
+                <td>Antihipertensi</td>
+                <td>12</td>
+                <td>Tablet</td>
+                <td>Menipis</td>
+                <td><button class="btn-hapus" onclick="hapusObat(this)">🗑 Hapus</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- LINK -->
+    <a href="https://uns.ac.id" target="_blank" class="btn-resmi">Lihat Info Apotek Selengkapnya</a>
+
+    <!-- DAFTAR KATEGORI OBAT -->
+    <h2>Kategori Obat Tersedia</h2>
+    <div class="daftar-kategori">
+        <ul id="listKategori">
+            <!-- Diisi otomatis oleh JavaScript -->
+        </ul>
+    </div>
+
+    <!-- FORM TAMBAH STOK OBAT -->
+    <div class="form-section">
+        <h2>➕ Tambah Stok Obat</h2>
+        <form name="formTambah" onsubmit="tambahObat(event)">
+            <div class="form-group">
+                <label for="nama_obat">Nama Obat:</label>
+                <input type="text" id="nama_obat" name="nama_obat" placeholder="Contoh: Paracetamol 500mg" required>
+            </div>
+            <div class="form-group">
+                <label for="kategori">Kategori:</label>
+                <select id="kategori" name="kategori" required>
+                    <option value="">-- Pilih Kategori --</option>
+                    <option value="Analgesik">Analgesik</option>
+                    <option value="Antibiotik">Antibiotik</option>
+                    <option value="Antasida">Antasida</option>
+                    <option value="Vitamin & Suplemen">Vitamin & Suplemen</option>
+                    <option value="Antihipertensi">Antihipertensi</option>
+                    <option value="Antihistamin">Antihistamin</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="jumlah">Jumlah Stok:</label>
+                <input type="number" id="jumlah" name="jumlah" placeholder="Contoh: 100" min="0" required>
+            </div>
+            <div class="form-group">
+                <label for="satuan">Satuan:</label>
+                <select id="satuan" name="satuan" required>
+                    <option value="">-- Pilih Satuan --</option>
+                    <option value="Tablet">Tablet</option>
+                    <option value="Kapsul">Kapsul</option>
+                    <option value="Botol">Botol</option>
+                    <option value="Strip">Strip</option>
+                    <option value="Sachet">Sachet</option>
+                    <option value="Ampul">Ampul</option>
+                </select>
+            </div>
+            <button type="submit" class="btn-tambah">➕ Tambah Obat</button>
+        </form>
+    </div>
+</div>
+
+<script src="Scriptpemula.js"></script>
+</body>
+</html>
